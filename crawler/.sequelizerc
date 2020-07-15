@@ -1,0 +1,7 @@
+const path = require('path');
+
+const sequelizeConfig = {
+    config: path.resolve(__dirname, 'src', 'config', 'database.js')
+}
+
+module.exports = sequelizeConfig;
