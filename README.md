@@ -198,6 +198,16 @@ $ yarn start
 
 Após rodar o comando, o frontend estará disponível no endereço `http://localhost:3000`.
 
+### RabbitMQ
+O RabbitMQ gerencia as mensagens trocadas entre a API e o Crawler. Duas filas foram utilizadas, a saber:
+
+* crawler_requests => fila com as requisições enviadas pela API para que o Crawler processe.
+* crawler_responses => fila com as respostas enviadas pelo Crawler após processar as *requests* e que serão manipuladas pela API.
+
+### SocketIO
+O SocketIO foi utilizado para refletir no frontend o término do processamento da requisição enviada para a API, ou seja, após o Crawler terminar a busca de produtos no Mercado Livre, a API emite um evento para o frontend atualizar o dado na listagem de pesquisa.
+
+
 ## Limitações
 Sendo esta uma aplicação inicial, algumas limitações não foram tratadas e segue abaixo algumas delas:
 
